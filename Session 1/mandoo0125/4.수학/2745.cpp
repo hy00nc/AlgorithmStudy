@@ -1,20 +1,31 @@
 #include <iostream>
-#include <string>
 using namespace std;
+
+#define MAX 1000001
+bool check[MAX];
 
 int main(){
     cin.tie(NULL);
     ios::sync_with_stdio(false);
 
-    string n;
-    int b;
-    int m=1;
-    cin>>n>>b;
-    int sum=0;
-    for(int i=n.size()-1;i>=0;i--){
-        if(n[i]-'A'>=0) sum+=(n[i]-'A'+10)*m;
-        else sum+=(n[i]-'0')*m;
-        m=m*b;
+    check[0]=check[1]=true; //0 과 1은 소수가 아니다.
+    for(int i=2;i<=MAX;i++){
+        if(check[i]==false){
+            for(int j=i+i;j<=MAX;j+=i){
+                check[j]=true;
+            }
+        }
     }
-    cout<<sum<<'\n';
+    
+    while(true){
+        int n;
+        cin>>n;
+        if(n==0) return 0;
+        for(int i=3;i<=n;i++){
+            if(check[i]==false && check[n-i]==false){
+                    cout<<n<<" = "<<i<<" + "<<n-i<<'\n';
+                    break;
+            }
+        }
+    }
 }
