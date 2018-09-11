@@ -1,4 +1,4 @@
-# Session 1.
+# Session 2.
 
 알고리즘 기초 강의 (https://code.plus/course/4)
 
@@ -19,3 +19,4 @@
 - [카드](https://www.acmicpc.net/problem/11652)
 - [K번째 수](https://www.acmicpc.net/problem/11004)
 - [버블 소트](https://www.acmicpc.net/problem/1377)
+
